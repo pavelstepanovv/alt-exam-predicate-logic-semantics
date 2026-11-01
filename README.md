@@ -21,6 +21,7 @@ cd alt-exam-predicate-logic-semantics
 Затем установите зависимости и скачайте базовую модель:
 
 ```powershell
+py install 3.10  
 py -3.10 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
@@ -42,12 +43,5 @@ py -3.10 -m venv .venv
 ```
 
 Интерфейс: http://127.0.0.1:8765. Остановка — Ctrl+C в окне запуска.
-
-
-## Проверки
-
-```powershell
-.\.venv\Scripts\python.exe -B -m unittest discover -s tests
-```
 
 
