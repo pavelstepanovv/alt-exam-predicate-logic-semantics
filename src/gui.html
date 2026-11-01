@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Перевод в логику предикатов</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: white; color: #222; font: 16px/1.5 Arial, sans-serif; }
+    main { max-width: 960px; margin: 32px auto; padding: 0 20px; }
+    h1 { margin-bottom: 8px; font-size: 28px; }
+    .intro, .hint, #status, #analysis-source { color: #666; font-size: 14px; }
+    .input-head, .actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 16px 0; }
+    label { font-weight: bold; }
+    select, button { padding: 8px 12px; font: inherit; }
+    textarea { width: 100%; min-height: 110px; padding: 12px; font: inherit; resize: vertical; }
+    button { cursor: pointer; }
+    button:disabled { cursor: wait; }
+    .actions { justify-content: flex-start; }
+    .results { border-top: 1px solid #bbb; margin-top: 24px; padding-top: 12px; }
+    h2 { font-size: 18px; }
+    .formula { min-height: 70px; font: 22px/1.7 "Cambria Math", serif; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .placeholder { font: 15px Arial, sans-serif; color: #777; }
+    #error, .failed { color: #a00; }
+    details { margin-top: 20px; }
+    summary { cursor: pointer; }
+    .analysis-content { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; border-bottom: 1px solid #ddd; padding: 8px 12px 8px 0; }
+    [hidden] { display: none !important; }
+    @media(max-width: 600px) { .input-head, .actions { align-items: stretch; flex-direction: column; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Перевод в логику предикатов</h1>
+  <p class="intro">Перевод предложения с учётом связей между словами.</p>
+  <form class="panel" id="form">
+    <div class="input-head">
+      <label for="sentence">Предложение</label>
+      <select id="examples" aria-label="Готовые примеры"><option value="">Выбрать пример</option></select>
+    </div>
+    <textarea id="sentence" maxlength="400" placeholder="Например: Мария уважает Анну." required></textarea>
+    <div class="actions">
+      <button id="translate" type="submit">Перевести</button>
+      <span id="status" role="status" aria-live="polite">Первый перевод потребует загрузки модели.</span>
+    </div>
+    <p id="error" role="alert" hidden></p>
+  </form>
+  <section class="results" aria-label="Результаты перевода" aria-live="polite">
+    <article class="panel result"><h2>Логическая формула</h2><div id="translation-result" class="formula placeholder">Здесь появится формула</div></article>
+  </section>
+  <details id="analysis" hidden>
+    <summary>Разбор предложения</summary>
+    <div class="panel analysis-content">
+      <p id="analysis-source"></p>
+      <p id="preparation" hidden></p>
+      <p id="symbols" hidden></p>
+      <p id="analysis-message" hidden></p>
+      <table><thead><tr><th>Слово</th><th>Начальная форма</th><th>Относится к слову</th><th>Связь</th></tr></thead><tbody id="analysis-rows"></tbody></table>
+    </div>
+  </details>
+  <p class="hint">Введите одно предложение. Ctrl + Enter — перевести.</p>
+</main>
+<script>
+  const $ = id => document.getElementById(id);
+  let busy = false;
+  function clearResults() {
+    $('translation-result').textContent = 'Здесь появится формула';
+    $('translation-result').className = 'formula placeholder';
+    $('analysis').hidden = true;
+    $('error').hidden = true;
+  }
+  fetch('/examples').then(r => r.json()).then(examples => {
+    for (const [label, text] of examples) {
+      const option = document.createElement('option');
+      option.textContent = label;
+      option.value = text;
+      $('examples').append(option);
+    }
+  }).catch(() => {});
+  $('examples').addEventListener('change', () => {
+    if ($('examples').value) { $('sentence').value = $('examples').value; clearResults(); $('sentence').focus(); }
+  });
+  $('sentence').addEventListener('input', () => { clearResults(); $('examples').value = ''; });
+  $('sentence').addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); $('form').requestSubmit(); }
+  });
+  $('form').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (busy) return;
+    clearResults(); busy = true;
+    $('translate').disabled = true; $('examples').disabled = true; $('sentence').readOnly = true;
+    $('status').textContent = 'Выполняется перевод… При первом запуске загружается модель.';
+    try {
+      const response = await fetch('/translate', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({text: $('sentence').value})});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Не удалось выполнить перевод.');
+      const result = data.results.translation;
+      $('translation-result').textContent = result.formula || result.error;
+      $('translation-result').className = result.formula ? 'formula' : 'formula failed';
+      $('analysis-rows').replaceChildren();
+      for (const item of data.analysis) {
+        const tr = document.createElement('tr');
+        for (const key of ['word', 'lemma', 'head', 'relation']) {
+          const td = document.createElement('td'); td.textContent = item[key]; tr.append(td);
+        }
+        $('analysis-rows').append(tr);
+      }
+      $('analysis-source').textContent = data.analysis_source;
+      $('preparation').textContent = data.preparation;
+      $('preparation').hidden = !data.preparation;
+      $('symbols').textContent = data.symbols ? 'Обозначения: ' + data.symbols : '';
+      $('symbols').hidden = !data.symbols;
+      $('analysis-message').textContent = data.analysis_message;
+      $('analysis-message').hidden = !data.analysis_message;
+      $('analysis').hidden = false;
+      $('status').textContent = 'Перевод завершён.';
+    } catch (error) {
+      $('error').textContent = error.message; $('error').hidden = false;
+      $('status').textContent = 'Перевод не выполнен.';
+    } finally {
+      busy = false; $('translate').disabled = false; $('examples').disabled = false; $('sentence').readOnly = false;
+    }
+  });
+</script>
+</body>
+</html>

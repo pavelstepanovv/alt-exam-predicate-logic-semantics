@@ -1,0 +1,779 @@
+[
+  {
+    "attempts": 1,
+    "cache_id": "6ffae69edf0d5ac430b82aebee36dcbd3f9e3b8aa49413d4ad90eb030e1dfb54",
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "schema_version": 1,
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 18,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ],
+    "status": "ok",
+    "text": "Анна любит Лабубу.",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "анна",
+        "pos": "PROPN",
+        "rel": "nsubj",
+        "start": 0,
+        "stop": 4,
+        "text": "Анна"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_2",
+        "lemma": "любить",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 5,
+        "stop": 10,
+        "text": "любит"
+      },
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Acc",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_3",
+        "lemma": "лабуба",
+        "pos": "PROPN",
+        "rel": "obj",
+        "start": 11,
+        "stop": 17,
+        "text": "Лабубу"
+      },
+      {
+        "feats": {},
+        "head_id": "1_2",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 17,
+        "stop": 18,
+        "text": "."
+      }
+    ]
+  },
+  {
+    "attempts": 2,
+    "cache_id": "a22e4cf22497f83c856de3aead15057293e454947085279f3aba60595b1828cb",
+    "error": {
+      "message": "Должна быть одна главная вершина предложения",
+      "stage": "structure_validation",
+      "type": "ValueError"
+    },
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "missing_marker": "<SYNTAX_UNAVAILABLE>",
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "raw_analysis": {
+      "sentences": [
+        {
+          "id": 1,
+          "start": 0,
+          "stop": 50,
+          "token_ids": [
+            "1_1",
+            "1_2",
+            "1_3",
+            "1_4",
+            "1_5",
+            "1_6",
+            "1_7",
+            "1_8",
+            "1_9",
+            "1_10"
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "feats": {},
+          "head_id": "1_5",
+          "id": "1_1",
+          "lemma": "хотя",
+          "pos": "PART",
+          "rel": "mark",
+          "start": 0,
+          "stop": 4,
+          "text": "Хотя"
+        },
+        {
+          "feats": {},
+          "head_id": "1_1",
+          "id": "1_2",
+          "lemma": "бы",
+          "pos": "PART",
+          "rel": "fixed",
+          "start": 5,
+          "stop": 7,
+          "text": "бы"
+        },
+        {
+          "feats": {
+            "Case": "Nom",
+            "Gender": "Masc",
+            "Number": "Sing"
+          },
+          "head_id": "1_4",
+          "id": "1_3",
+          "lemma": "один",
+          "pos": "NUM",
+          "rel": "nummod",
+          "start": 8,
+          "stop": 12,
+          "text": "один"
+        },
+        {
+          "feats": {
+            "Animacy": "Anim",
+            "Case": "Nom",
+            "Gender": "Masc",
+            "Number": "Sing"
+          },
+          "head_id": "1_5",
+          "id": "1_4",
+          "lemma": "лабуба",
+          "pos": "NOUN",
+          "rel": "nsubj",
+          "start": 13,
+          "stop": 19,
+          "text": "лабубу"
+        },
+        {
+          "feats": {
+            "Aspect": "Imp",
+            "Mood": "Ind",
+            "Number": "Sing",
+            "Person": "3",
+            "Tense": "Pres",
+            "VerbForm": "Fin",
+            "Voice": "Act"
+          },
+          "head_id": "1_5",
+          "id": "1_5",
+          "lemma": "любить",
+          "pos": "VERB",
+          "rel": "advcl",
+          "start": 20,
+          "stop": 25,
+          "text": "любит"
+        },
+        {
+          "feats": {},
+          "head_id": "1_8",
+          "id": "1_6",
+          "lemma": "хотя",
+          "pos": "PART",
+          "rel": "advmod",
+          "start": 26,
+          "stop": 30,
+          "text": "хотя"
+        },
+        {
+          "feats": {},
+          "head_id": "1_6",
+          "id": "1_7",
+          "lemma": "бы",
+          "pos": "PART",
+          "rel": "fixed",
+          "start": 31,
+          "stop": 33,
+          "text": "бы"
+        },
+        {
+          "feats": {
+            "Animacy": "Anim",
+            "Case": "Acc",
+            "Gender": "Masc"
+          },
+          "head_id": "1_9",
+          "id": "1_8",
+          "lemma": "один",
+          "pos": "NUM",
+          "rel": "nummod",
+          "start": 34,
+          "stop": 40,
+          "text": "одного"
+        },
+        {
+          "feats": {
+            "Animacy": "Anim",
+            "Case": "Acc",
+            "Gender": "Masc",
+            "Number": "Sing"
+          },
+          "head_id": "1_5",
+          "id": "1_9",
+          "lemma": "студент",
+          "pos": "NOUN",
+          "rel": "obj",
+          "start": 41,
+          "stop": 49,
+          "text": "студента"
+        },
+        {
+          "feats": {},
+          "head_id": "1_5",
+          "id": "1_10",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "rel": "punct",
+          "start": 49,
+          "stop": 50,
+          "text": "."
+        }
+      ]
+    },
+    "schema_version": 1,
+    "sentences": [],
+    "status": "missing",
+    "text": "Хотя бы один лабубу любит хотя бы одного студента.",
+    "tokens": []
+  },
+  {
+    "attempts": 1,
+    "cache_id": "b37e1e5cf9dfcef05a03873c10552989437c7c5a0f8fe657cb9a85350a36acfc",
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "schema_version": 1,
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 21,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ],
+    "status": "ok",
+    "text": "Каждый лабубу читает.",
+    "tokens": [
+      {
+        "feats": {
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "каждый",
+        "pos": "DET",
+        "rel": "det",
+        "start": 0,
+        "stop": 6,
+        "text": "Каждый"
+      },
+      {
+        "feats": {
+          "Animacy": "Inan",
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "head_id": "1_3",
+        "id": "1_2",
+        "lemma": "лабуба",
+        "pos": "NOUN",
+        "rel": "nsubj",
+        "start": 7,
+        "stop": 13,
+        "text": "лабубу"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_3",
+        "lemma": "читать",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 14,
+        "stop": 20,
+        "text": "читает"
+      },
+      {
+        "feats": {},
+        "head_id": "1_3",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 20,
+        "stop": 21,
+        "text": "."
+      }
+    ]
+  },
+  {
+    "attempts": 1,
+    "cache_id": "c8bf86d7009a6e28ec3180ab5733d675560c2f606e34bb990886134e0ec8b5ce",
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "schema_version": 1,
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 18,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ],
+    "status": "ok",
+    "text": "Анну любит Лабубу.",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Acc",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "анна",
+        "pos": "PROPN",
+        "rel": "obj",
+        "start": 0,
+        "stop": 4,
+        "text": "Анну"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_2",
+        "lemma": "любить",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 5,
+        "stop": 10,
+        "text": "любит"
+      },
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Acc",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_3",
+        "lemma": "лабуба",
+        "pos": "PROPN",
+        "rel": "nsubj",
+        "start": 11,
+        "stop": 17,
+        "text": "Лабубу"
+      },
+      {
+        "feats": {},
+        "head_id": "1_2",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 17,
+        "stop": 18,
+        "text": "."
+      }
+    ]
+  },
+  {
+    "attempts": 1,
+    "cache_id": "cdc57300d6716282543c35841d788c25c9f3c89546a989adc8c9a30610294677",
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "schema_version": 1,
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 17,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ],
+    "status": "ok",
+    "text": "Все любят лабубу.",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Number": "Plur"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "весь",
+        "pos": "PRON",
+        "rel": "nsubj",
+        "start": 0,
+        "stop": 3,
+        "text": "Все"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Plur",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_2",
+        "lemma": "любить",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 4,
+        "stop": 9,
+        "text": "любят"
+      },
+      {
+        "feats": {
+          "Animacy": "Inan",
+          "Case": "Acc",
+          "Gender": "Masc",
+          "Number": "Plur"
+        },
+        "head_id": "1_2",
+        "id": "1_3",
+        "lemma": "лабуба",
+        "pos": "NOUN",
+        "rel": "obj",
+        "start": 10,
+        "stop": 16,
+        "text": "лабубу"
+      },
+      {
+        "feats": {},
+        "head_id": "1_2",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 16,
+        "stop": 17,
+        "text": "."
+      }
+    ]
+  },
+  {
+    "attempts": 1,
+    "cache_id": "cc14ffc23d5a08ccdac470bdd447f69baa2afdd90841131bc110739c1dae5115",
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "schema_version": 1,
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 18,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ],
+    "status": "ok",
+    "text": "Все Лабубу бегают.",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Number": "Plur"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "весь",
+        "pos": "PRON",
+        "rel": "det",
+        "start": 0,
+        "stop": 3,
+        "text": "Все"
+      },
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "head_id": "1_3",
+        "id": "1_2",
+        "lemma": "лабуба",
+        "pos": "PROPN",
+        "rel": "nsubj",
+        "start": 4,
+        "stop": 10,
+        "text": "Лабубу"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Plur",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_3",
+        "lemma": "бегать",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 11,
+        "stop": 17,
+        "text": "бегают"
+      },
+      {
+        "feats": {},
+        "head_id": "1_3",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 17,
+        "stop": 18,
+        "text": "."
+      }
+    ]
+  }
+]
