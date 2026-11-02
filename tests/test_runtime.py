@@ -102,6 +102,25 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(generate.call_args.args[2], [{"id": "demo", "input_ids": [3, 1]}])
         translator.model.requires_grad_.assert_called_once_with(False)
 
+    def test_gui_keeps_invalid_model_responses_unchanged(self):
+        fixture = FIXTURES["Мария уважает Анну."]
+        translator = Translator()
+        translator.load, translator.model, translator.tokenizer = Mock(), Mock(), object()
+        translator.analysis = Mock(return_value=(fixture, "Автоматический разбор"))
+        responses = (
+            '["pred","R1",["const","a1"]],["pred","R1",["const","a1"]]',
+            '["pred","R1"]',
+            '  <b>Ответ модели</b>\n',
+            '',
+        )
+        for response in responses:
+            with self.subTest(response=response), \
+                 patch("src.gui.tokenize_input", return_value=[3, 1]), \
+                 patch("src.prediction.generate_responses", return_value=[{"raw_response": response}]):
+                result = translator.translate(fixture["text"])["results"]["translation"]
+            self.assertIsNone(result["formula"])
+            self.assertEqual(result["raw_response"], response)
+
     def test_parser_cache_reuses_the_same_record(self):
         fixture = FIXTURES["Мария уважает Анну."]
         analyzer = SimpleNamespace(identity={"implementation": "test"}, analyze=Mock(return_value={k: fixture[k] for k in ("tokens", "sentences")}))
