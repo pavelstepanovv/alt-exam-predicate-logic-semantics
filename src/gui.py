@@ -129,7 +129,7 @@ class Translator:
         valid = parsed["validation_status"] == "valid"
         formula = rename_formula(parsed["parsed_ast"], context["inverse"]) if valid else None
         result = {"formula": format_formula(formula, context["original_entities"]) if valid else None,
-                  "error": None if valid else "Модель не сформировала полноценную формулу. Попробуйте другую формулировку."}
+                  "raw_response": response["raw_response"]}
         symbols = "; ".join(symbol + " — " + context["original_entities"].get(original, original)
                             for symbol, original in sorted(context["inverse"].items()))
         return {"sentence": text, "results": {"translation": result}, "analysis": display_analysis(analysis),
