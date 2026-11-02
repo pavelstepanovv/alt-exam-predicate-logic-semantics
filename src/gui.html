@@ -21,7 +21,8 @@
     h2 { font-size: 18px; }
     .formula { min-height: 70px; font: 22px/1.7 "Cambria Math", serif; white-space: pre-wrap; overflow-wrap: anywhere; }
     .placeholder { font: 15px Arial, sans-serif; color: #777; }
-    #error, .failed { color: #a00; }
+    #error { color: #a00; }
+    .raw-response { font: 15px/1.6 Consolas, monospace; }
     details { margin-top: 20px; }
     summary { cursor: pointer; }
     .analysis-content { overflow-x: auto; }
@@ -48,7 +49,7 @@
     <p id="error" role="alert" hidden></p>
   </form>
   <section class="results" aria-label="Результаты перевода" aria-live="polite">
-    <article class="panel result"><h2>Логическая формула</h2><div id="translation-result" class="formula placeholder">Здесь появится формула</div></article>
+    <article class="panel result"><h2 id="translation-title">Логическая формула</h2><div id="translation-result" class="formula placeholder">Здесь появится формула</div></article>
   </section>
   <details id="analysis" hidden>
     <summary>Разбор предложения</summary>
@@ -66,6 +67,7 @@
   const $ = id => document.getElementById(id);
   let busy = false;
   function clearResults() {
+    $('translation-title').textContent = 'Логическая формула';
     $('translation-result').textContent = 'Здесь появится формула';
     $('translation-result').className = 'formula placeholder';
     $('analysis').hidden = true;
@@ -97,8 +99,9 @@
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Не удалось выполнить перевод.');
       const result = data.results.translation;
-      $('translation-result').textContent = result.formula || result.error;
-      $('translation-result').className = result.formula ? 'formula' : 'formula failed';
+      $('translation-title').textContent = result.formula ? 'Логическая формула' : 'Ответ модели';
+      $('translation-result').textContent = result.formula ?? result.raw_response ?? '';
+      $('translation-result').className = result.formula ? 'formula' : 'formula raw-response';
       $('analysis-rows').replaceChildren();
       for (const item of data.analysis) {
         const tr = document.createElement('tr');
