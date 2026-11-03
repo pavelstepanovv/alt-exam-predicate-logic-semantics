@@ -1,0 +1,21 @@
+{
+  "model": "google/mt5-small",
+  "revision": "73fb5dbe4756edadc8fbe8c769b0a109493acf7a",
+  "representation": "abstract-roles-v2",
+  "selected_step": 3500,
+  "seed": 100042,
+  "base_directory": "models/base",
+  "adapter_directory": "models/translator",
+  "base_sha256": {
+    "pytorch_model.bin": "9daa76f0231b96162833ebfee26e886a781b72e0d95ad1a1826b9147a74a939a",
+    "config.json": "b25aaf4603a85d703b28eec4e72ca8c768fca30d987b4a544f4f1d158ae4e1b5",
+    "generation_config.json": "f5a1c7e2be8092018d8835128987edf0111637dd98e90599cc80310fef75d95a",
+    "spiece.model": "ef78f86560d809067d12bac6c09f19a462cb3af3f54d2b8acbba26e1433125d6",
+    "tokenizer_config.json": "cc95393d0bb13f2334252ff1869aff6ff15195455b85e214f2f6d1c18237bbfa",
+    "special_tokens_map.json": "cc79702b15102ce1ade7ad5968a83dcedf00ab8a35f9f37867ca00263f7361f1"
+  },
+  "adapter_sha256": {
+    "adapter_model.safetensors": "90cd29845271ca176898618615a2bea872d5634b5af1d8ca446fdad7481fe67e",
+    "adapter_config.json": "2e00aa1cf0ac0c67767c4d661a1d551f9bbb838f6ee637e9be6fd6df3573a255"
+  }
+}

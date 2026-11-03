@@ -1,0 +1,346 @@
+[
+  {
+    "text": "Мария уважает Анну.",
+    "status": "ok",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "мария",
+        "pos": "PROPN",
+        "rel": "nsubj",
+        "start": 0,
+        "stop": 5,
+        "text": "Мария"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_2",
+        "lemma": "уважать",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 6,
+        "stop": 13,
+        "text": "уважает"
+      },
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Acc",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_3",
+        "lemma": "анна",
+        "pos": "PROPN",
+        "rel": "obj",
+        "start": 14,
+        "stop": 18,
+        "text": "Анну"
+      },
+      {
+        "feats": {},
+        "head_id": "1_2",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 18,
+        "stop": 19,
+        "text": "."
+      }
+    ],
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 19,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Анну уважает Мария.",
+    "status": "ok",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Acc",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_1",
+        "lemma": "анна",
+        "pos": "PROPN",
+        "rel": "obj",
+        "start": 0,
+        "stop": 4,
+        "text": "Анну"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_2",
+        "lemma": "уважать",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 5,
+        "stop": 12,
+        "text": "уважает"
+      },
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "head_id": "1_2",
+        "id": "1_3",
+        "lemma": "мария",
+        "pos": "PROPN",
+        "rel": "nsubj",
+        "start": 13,
+        "stop": 18,
+        "text": "Мария"
+      },
+      {
+        "feats": {},
+        "head_id": "1_2",
+        "id": "1_4",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 18,
+        "stop": 19,
+        "text": "."
+      }
+    ],
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 19,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Ни один студент, который внимателен, не консультирует Елену.",
+    "status": "ok",
+    "tokens": [
+      {
+        "text": "Ни",
+        "stop": 2,
+        "feats": {
+          "Polarity": "Neg"
+        },
+        "id": "1_1",
+        "pos": "PART",
+        "rel": "advmod",
+        "head_id": "1_2",
+        "start": 0,
+        "lemma": "ни"
+      },
+      {
+        "text": "один",
+        "stop": 7,
+        "feats": {
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "id": "1_2",
+        "pos": "NUM",
+        "rel": "nummod",
+        "head_id": "1_3",
+        "start": 3,
+        "lemma": "один"
+      },
+      {
+        "text": "студент",
+        "stop": 15,
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "id": "1_3",
+        "pos": "NOUN",
+        "rel": "nsubj",
+        "head_id": "1_9",
+        "start": 8,
+        "lemma": "студент"
+      },
+      {
+        "text": ",",
+        "stop": 16,
+        "feats": {},
+        "id": "1_4",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "head_id": "1_6",
+        "start": 15,
+        "lemma": ","
+      },
+      {
+        "text": "который",
+        "stop": 24,
+        "feats": {
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "id": "1_5",
+        "pos": "PRON",
+        "rel": "nsubj",
+        "head_id": "1_6",
+        "start": 17,
+        "lemma": "который"
+      },
+      {
+        "text": "внимателен",
+        "stop": 35,
+        "feats": {
+          "Degree": "Pos",
+          "Gender": "Masc",
+          "Number": "Sing",
+          "Variant": "Short"
+        },
+        "id": "1_6",
+        "pos": "ADJ",
+        "rel": "acl:relcl",
+        "head_id": "1_3",
+        "start": 25,
+        "lemma": "внимательный"
+      },
+      {
+        "text": ",",
+        "stop": 36,
+        "feats": {},
+        "id": "1_7",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "head_id": "1_6",
+        "start": 35,
+        "lemma": ","
+      },
+      {
+        "text": "не",
+        "stop": 39,
+        "feats": {
+          "Polarity": "Neg"
+        },
+        "id": "1_8",
+        "pos": "PART",
+        "rel": "advmod",
+        "head_id": "1_9",
+        "start": 37,
+        "lemma": "не"
+      },
+      {
+        "text": "консультирует",
+        "stop": 53,
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "id": "1_9",
+        "pos": "VERB",
+        "rel": "root",
+        "head_id": "1_0",
+        "start": 40,
+        "lemma": "консультировать"
+      },
+      {
+        "text": "Елену",
+        "stop": 59,
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Acc",
+          "Gender": "Fem",
+          "Number": "Sing"
+        },
+        "id": "1_10",
+        "pos": "PROPN",
+        "rel": "obj",
+        "head_id": "1_9",
+        "start": 54,
+        "lemma": "елена"
+      },
+      {
+        "text": ".",
+        "stop": 60,
+        "feats": {},
+        "id": "1_11",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "head_id": "1_9",
+        "start": 59,
+        "lemma": "."
+      }
+    ],
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 60,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4",
+          "1_5",
+          "1_6",
+          "1_7",
+          "1_8",
+          "1_9",
+          "1_10",
+          "1_11"
+        ]
+      }
+    ]
+  }
+]

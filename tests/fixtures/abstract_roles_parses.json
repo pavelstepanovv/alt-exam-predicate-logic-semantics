@@ -1,0 +1,146 @@
+[
+  {
+    "attempts": 1,
+    "cache_id": "21500f568bf313b97a3648575d9886e464706f416e07a7c4db76401e5544f7e0",
+    "identity": {
+      "implementation": "ru-natasha-v2",
+      "models_sha256": {
+        "navec_news_v1_1B_250K_300d_100q.tar": "f07270833d78523edc5781538d67038e95b43975e4a7ae757c693b687f9cbfca",
+        "slovnet_morph_news_v1.tar": "54812762a641c742dbfa9c950c4b53bbb469301983077ed01b9f074643d540d3",
+        "slovnet_syntax_news_v1.tar": "0759ce82eaac4430f5b4ac27b2444aa6e4b6501ca38c2f45d62467265383d85e"
+      },
+      "packages": {
+        "natasha": "1.6.0",
+        "navec": "0.10.0",
+        "numpy": "2.2.6",
+        "pymorphy2": "0.9.1",
+        "pymorphy2-dicts-ru": "2.4.417127.4579844",
+        "razdel": "0.5.0",
+        "slovnet": "0.6.0"
+      }
+    },
+    "parameters": {
+      "attempts_max": 2,
+      "graph_policy": "one_root_and_acyclic_or_missing",
+      "missing_marker": "<SYNTAX_UNAVAILABLE>",
+      "normalization": "none",
+      "pipeline": [
+        "segment",
+        "morph",
+        "lemma",
+        "syntax"
+      ],
+      "schema_version": 1,
+      "segment": "razdel_default"
+    },
+    "schema_version": 1,
+    "sentences": [
+      {
+        "id": 1,
+        "start": 0,
+        "stop": 37,
+        "token_ids": [
+          "1_1",
+          "1_2",
+          "1_3",
+          "1_4",
+          "1_5",
+          "1_6"
+        ]
+      }
+    ],
+    "status": "ok",
+    "text": "Борис одновременно работает и учится.",
+    "tokens": [
+      {
+        "feats": {
+          "Animacy": "Anim",
+          "Case": "Nom",
+          "Gender": "Masc",
+          "Number": "Sing"
+        },
+        "head_id": "1_3",
+        "id": "1_1",
+        "lemma": "борис",
+        "pos": "PROPN",
+        "rel": "nsubj",
+        "start": 0,
+        "stop": 5,
+        "text": "Борис"
+      },
+      {
+        "feats": {
+          "Degree": "Pos"
+        },
+        "head_id": "1_3",
+        "id": "1_2",
+        "lemma": "одновременно",
+        "pos": "ADV",
+        "rel": "advmod",
+        "start": 6,
+        "stop": 18,
+        "text": "одновременно"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Act"
+        },
+        "head_id": "1_0",
+        "id": "1_3",
+        "lemma": "работать",
+        "pos": "VERB",
+        "rel": "root",
+        "start": 19,
+        "stop": 27,
+        "text": "работает"
+      },
+      {
+        "feats": {},
+        "head_id": "1_5",
+        "id": "1_4",
+        "lemma": "и",
+        "pos": "CCONJ",
+        "rel": "cc",
+        "start": 28,
+        "stop": 29,
+        "text": "и"
+      },
+      {
+        "feats": {
+          "Aspect": "Imp",
+          "Mood": "Ind",
+          "Number": "Sing",
+          "Person": "3",
+          "Tense": "Pres",
+          "VerbForm": "Fin",
+          "Voice": "Mid"
+        },
+        "head_id": "1_3",
+        "id": "1_5",
+        "lemma": "учиться",
+        "pos": "VERB",
+        "rel": "conj",
+        "start": 30,
+        "stop": 36,
+        "text": "учится"
+      },
+      {
+        "feats": {},
+        "head_id": "1_3",
+        "id": "1_6",
+        "lemma": ".",
+        "pos": "PUNCT",
+        "rel": "punct",
+        "start": 36,
+        "stop": 37,
+        "text": "."
+      }
+    ]
+  }
+]
